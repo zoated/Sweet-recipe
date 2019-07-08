@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/logs/logs"
+  ],
+  "usingComponents": {
+    "wux-search-bar": "./dist/search-bar/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#080800",
+    "navigationBarTitleText": "小小菜谱",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#333333",
+    "list": [
+      {
+        "iconPath": "pages/src/home.png",
+        "selectedIconPath": "pages/src/selectHome.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "pages/src/sort.png",
+        "selectedIconPath": "pages/src/selectSort.png",
+        "pagePath": "pages/logs/logs",
+        "text": "分类"
+      },
+      {
+        "iconPath": "pages/src/chef-default.png",
+        "selectedIconPath": "pages/src/chef-pressed.png",
+        "pagePath": "pages/logs/logs",
+        "text": "精选菜谱"
+      },
+      {
+        "iconPath": "pages/src/collection-default.png",
+        "selectedIconPath": "pages/src/collection-pressed.png",
+        "pagePath": "pages/logs/logs",
+        "text": "收藏"
+      },
+      {
+        "iconPath": "pages/src/my-default.png",
+        "selectedIconPath": "pages/src/my-pressed.png",
+        "pagePath": "pages/index/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
