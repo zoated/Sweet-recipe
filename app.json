@@ -2,10 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/home/home",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/foodInfo/footInfo"
   ],
   "usingComponents": {
-    "wux-search-bar": "./dist/search-bar/index"
+    "wux-search-bar": "./dist/search-bar/index",
+    "wux-cell-group": "./dist/cell-group/index",
+    "wux-cell": "./dist/cell/index",
+    "wux-select": "./dist/select/index",
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index"
   },
   "window": {
     "backgroundTextStyle": "light",

@@ -12,7 +12,7 @@
   <view class="chosen-type">
     <view class="left">
       <view class="left-text">
-        <view class="left-text1">早中晚餐</view>
+        <view class="left-text1">日常三餐</view>
         <view class="left-text2">每日三餐推荐</view>
       </view>
       <image src="../src/chef-icon.png" class="left-icon" />
@@ -36,6 +36,22 @@
     <image src="../src/baking.jpg" class="top-img" />
   </view>
   <view class="want-eat">
-    <view class="want-title">- 我想吃的 -</view>
+    <wux-select id="wux-select1" />
+    <wux-cell extra="- {{ title1 }} -" bind:click="onClick1"></wux-cell>
+  </view>
+  <view wx:for="{{topList}}" wx:key="{{index}}" class="top-conten">
+    <wux-wing-blank size="default">
+      <wux-card extra="{{item.title}}" thumb="{{item.albums[0]}}" thumbStyle="width:60px;height:60px">
+        <view slot="body">{{item.tags}}</view>
+        <view slot="footer">
+          <view>
+            主料：{{item.ingredients}}
+          </view>
+          <view>
+            辅料：{{item.burden}}
+          </view>
+        </view>
+      </wux-card>
+    </wux-wing-blank>
   </view>
 </view>
