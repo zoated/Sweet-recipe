@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/home/home",
-    "pages/logs/logs",
-    "pages/foodInfo/footInfo"
+    "pages/foodInfo/foodInfo",
+    "pages/index/index",
+    "pages/logs/logs"
   ],
   "usingComponents": {
     "wux-search-bar": "./dist/search-bar/index",
@@ -11,7 +11,9 @@
     "wux-cell": "./dist/cell/index",
     "wux-select": "./dist/select/index",
     "wux-card": "../../dist/card/index",
-    "wux-wing-blank": "../../dist/wing-blank/index"
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-steps": "../../dist/steps/index",
+    "wux-step": "../../dist/step/index"
   },
   "window": {
     "backgroundTextStyle": "light",

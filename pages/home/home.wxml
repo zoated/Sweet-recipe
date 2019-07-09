@@ -2,7 +2,7 @@
   <view class="page__bd">
     <wux-search-bar clear maxlength="8" />
   </view>
-  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-active-color='white' bindchange='change'>
+  <swiper class="swiper-box" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-active-color='white' bindchange='change'>
     <block wx:for="{{imgUrls}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" bindtap="swipclick" />
@@ -39,7 +39,7 @@
     <wux-select id="wux-select1" />
     <wux-cell extra="- {{ title1 }} -" bind:click="onClick1"></wux-cell>
   </view>
-  <view wx:for="{{topList}}" wx:key="{{index}}" class="top-conten">
+  <view wx:for="{{topList}}" wx:key="{{index}}" class="top-conten" bindtap="onBoxClick" data-clickindex="{{index}}">
     <wux-wing-blank size="default">
       <wux-card extra="{{item.title}}" thumb="{{item.albums[0]}}" thumbStyle="width:60px;height:60px">
         <view slot="body">{{item.tags}}</view>

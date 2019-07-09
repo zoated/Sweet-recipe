@@ -1,0 +1,132 @@
+/* pages/foodInfo/foodInfo.wxss */
+
+.food-img {
+  width: 100%;
+  height: 250px;
+}
+
+.food-info {
+  margin: 10px;
+}
+
+.food-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.food-tags {
+  font-size: 13px;
+  color: #6c6c6c;
+  margin-bottom: 10px;
+}
+
+.food-imtro {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.food-buren {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.practice-text {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+}
+
+.practice-info {
+  margin-bottom: 16px;
+}
+
+.practice-img {
+  width: 100%;
+  height: 260px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.food-footer {
+  border-top: 4px solid #e6e6e6;
+}
+
+.like-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px 10px 10px;
+}
+
+.like-left {
+  font-size: 15px;
+}
+
+.like-right {
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.like-conter {
+  margin: 10px;
+  display: flex;
+}
+
+.like-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.like-img {
+  width: 50%;
+  height: 120px;
+  border-radius: 4px;
+}
+
+.like-info {
+  width: 50%;
+  margin-left:8px; 
+}
+
+.like-burden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: #4e4e4e;
+  margin-bottom: 10px;
+}
+.like-imtro{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #bfbfbf;
+}
+.keep-white{
+  width: 100%;
+  height: 40px;
+  background: #fff;
+}
+.but{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  z-index: 99999;
+}
+.add-but{
+  width: 50%;
+  color: #6c6c6c;
+  background: white;
+  border:1px solid #6c6c6c; 
+}
+.share-but{
+  width: 50%;
+  background: #6c6c6c;
+  color: white
+}

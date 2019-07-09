@@ -1,0 +1,41 @@
+<!--pages/foodInfo/foodInfo.wxml-->
+<view>
+  <image src="{{clickData.albums[0]}}" class="food-img"></image>
+  <view class="food-info">
+    <view class="food-title">{{clickData.title}}</view>
+    <view class="food-tags">{{clickData.tags}}</view>
+    <view class="food-imtro">{{clickData.imtro}}</view>
+    <view>
+      <view class="food-buren">用料</view>
+      <wux-cell-group wx:for="{{clickData.burden}}">
+        <wux-cell title="{{item[0]}}" extra="{{item[1]}}"></wux-cell>
+      </wux-cell-group>
+    </view>
+    <view>
+      <view class="practice-text">做法</view>
+      <view wx:for="{{clickData.steps}}" class="practice-info">
+        <image src="{{item.img}}" class="practice-img"></image>
+        <view>{{item.step}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="food-footer">
+    <view class="like-title">
+      <view class="like-left">猜你喜欢</view>
+      <view class="like-right">查看全部</view>
+    </view>
+    <view wx:for="{{likeData}}" class="like-conter">
+      <image src="{{item.albums[0]}}" class="like-img"></image>
+      <view class="like-info">
+        <view class="like-name">{{item.title}}</view>
+        <view class="like-burden">{{item.ingredients}};{{item.burden}}</view>
+        <view class="like-imtro">{{item.imtro}}</view>
+      </view>
+    </view>
+    <view class="keep-white"></view>
+    <view class="but">
+      <button class="add-but" plain="{{ture}}">收藏</button>
+      <button class="share-but">分享</button>
+    </view>
+  </view>
+</view>

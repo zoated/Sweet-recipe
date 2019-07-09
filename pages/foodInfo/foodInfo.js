@@ -1,25 +1,13 @@
-// pages/home/home.js
-import { $wuxSelect } from '../../dist/index'
-
+// pages/foodInfo/foodInfo.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '../src/home-menu.jpg',
-      '../src/baking-teaching.jpg',
-      '../src/crayfish.jpg'
-    ],
-    indicatorDots: false,
-    autoplay: false,
-    current: 0,
-    clickIndex: 0,
-    interval: 5000,
-    duration: 1000,
     clickData: [],
-    topList: [{
+    likeData: [{
       "id": "45",
       "title": "秘制红烧肉",
       "tags": "家常菜;热菜;烧;煎;炖;红烧;炒锅",
@@ -198,85 +186,15 @@ Page({
         "step": "17.再来一张，想吃吗，那就赶紧动手吧，呵呵。"
       }]
     }],
-    value1: '本周TOP10',
-    title1:'本周TOP10',  
-    animationData: {},
-    animationData2: {},
-    bannerIndex: ['香芋蒸排骨','宫保鸡丁','干烧黄花鱼'],
-    scrollTop: 0,
   },
-  onClick1() {
-    $wuxSelect('#wux-select1').open({
-      value: this.data.value1,
-      options: [
-        '本周TOP10',
-        '本月TOP10',
-        '本年TOP10',
-      ],
-      onConfirm: (value, index, options) => {
-        console.log('onConfirm', value, index, options)
-        if (index !== -1) {
-          this.setData({
-            value1: value,
-            title1: options[index],
-          })
-        }
-      },
-    })
-  },
-  change: function(e){
-    this.setData({
-      current: e.detail.current
-    })
-  },
-  swipclick: function(e){
-    wx.request({
-      url: 'http://apis.juhe.cn/cook/query.php',
-      data: {
-        menu: this.data.bannerIndex[this.data.current],
-        key: 'cc2c336e5d6ba320bb10ee365e273036'
-      },
-      method :'GET',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data)
-      }
-    })
-  },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
-    })
-  },
-  onBoxClick: function (e){
-    this.setData({ clickIndex: e.currentTarget.dataset.clickindex }, () => wx.navigateTo({
-      url: '/pages/foodInfo/foodInfo'
-    }))
-    getApp().globalData.clickFood = this.data.topList[e.currentTarget.dataset.clickindex]
-  },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(app)
+    app.globalData.clickFood.burden = (app.globalData.clickFood.ingredients + ";" + app.globalData.clickFood.burden).split(";").filter(i => i != "").map(i => i && i.split(","))
+    this.setData({clickData: app.globalData.clickFood})
   },
 
   /**
@@ -290,6 +208,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(this.app)
 
   },
 
