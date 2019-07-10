@@ -42,7 +42,11 @@
   <view wx:for="{{topList}}" wx:key="{{index}}" class="top-conten" bindtap="onBoxClick" data-clickindex="{{index}}">
     <wux-wing-blank size="default">
       <wux-card extra="{{item.title}}" thumb="{{item.albums[0]}}" thumbStyle="width:60px;height:60px">
-        <view slot="body">{{item.tags}}</view>
+        <view slot="body" class="tags">
+          <view wx:for="{{item.tags}}" wx:for-item="itemName" class="tag">
+            <wux-tag>{{itemName}}</wux-tag>
+          </view>
+        </view>
         <view slot="footer">
           <view>
             主料：{{item.ingredients}}

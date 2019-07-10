@@ -106,7 +106,13 @@
   border-radius: 6px;
   margin-right: 10px;
 }
-
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag{
+  margin-bottom: 4px;
+}
 .want-eat {
   border-top: 4px solid #e6e6e6;
   display: flex;

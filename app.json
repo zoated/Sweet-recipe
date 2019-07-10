@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/classify/classify",
     "pages/home/home",
     "pages/foodInfo/foodInfo",
     "pages/index/index",
@@ -13,7 +14,10 @@
     "wux-card": "../../dist/card/index",
     "wux-wing-blank": "../../dist/wing-blank/index",
     "wux-steps": "../../dist/steps/index",
-    "wux-step": "../../dist/step/index"
+    "wux-step": "../../dist/step/index",
+    "wux-tabs": "../../dist/tabs/index",
+    "wux-tab": "../../dist/tab/index",
+    "wux-tag": "../../dist/tag/index"
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +38,7 @@
       {
         "iconPath": "pages/src/sort.png",
         "selectedIconPath": "pages/src/selectSort.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/classify/classify",
         "text": "分类"
       },
       {
