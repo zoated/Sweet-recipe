@@ -271,6 +271,16 @@ Page({
       duration: e.detail.value
     })
   },
+  onChickAll: function(e) {
+    wx.switchTab({
+      url: '/pages/classify/classify'
+    })
+  },
+  openSeach: function(e){
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
+  },
   onBoxClick: function(e) {
     this.setData({
       clickIndex: e.currentTarget.dataset.clickindex

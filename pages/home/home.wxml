@@ -1,6 +1,14 @@
 <view class="page">
-  <view class="page__bd">
-    <wux-search-bar clear maxlength="8" />
+  <view class="page__bd" bindtap="openSeach">
+    <view class="wux-search-bar wux-search-bar">
+      <view class="wux-search-bar__form wux-search-bar__form">
+        <icon color="#B2B2B2" size="14" type="search" role="img" class="wux-search-bar__icon wux-search-bar__icon">
+        </icon>
+        <text class="wux-search-bar__text wux-search-bar__text">
+        搜索
+      </text>
+      </view>
+    </view>
   </view>
   <swiper class="swiper-box" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-active-color='white' bindchange='change'>
     <block wx:for="{{imgUrls}}">
@@ -27,7 +35,7 @@
   </view>
   <view class="top-type">
     <view class="top-left">热门分类</view>
-    <view class="top-right">查看全部</view>
+    <view class="top-right" bindtap="onChickAll">查看全部</view>
   </view>
   <view class="top">
     <image src="../src/homely.jpg" class="top-img" />
@@ -43,7 +51,7 @@
     <wux-wing-blank size="default">
       <wux-card extra="{{item.title}}" thumb="{{item.albums[0]}}" thumbStyle="width:60px;height:60px">
         <view slot="body" class="tags">
-          <view wx:for="{{item.tags}}" wx:for-item="itemName" class="tag">
+          <view wx:for="{{item.tags}}" wx:for-item="itemName" class="tag" hover-class="none">
             <wux-tag>{{itemName}}</wux-tag>
           </view>
         </view>
