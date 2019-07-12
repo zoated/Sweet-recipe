@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,8 +33,27 @@ App({
       }
     })
   },
+  getUserInfo: function(cb) {
+    const _this = this;
+    if (this.globalData.userInfo) {
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    } else {
+      //调用登陆接口
+      wx.login({
+        success: function() {
+          wx.getUserInfo({
+            success: function(res) {
+              _this.globalData.userInfo = res.userInfo
+              typeof cb == "function" && cb(_this.globalData.userInfo)
+            }
+          })
+        }
+      })
+    }
+  },
   globalData: {
     userInfo: null,
     clickFood: [],
+    searchResults: [],
   }
 })

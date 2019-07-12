@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/start/start",
+    "pages/searchResults/searchResults",
     "pages/home/home",
     "pages/search/search",
-    "pages/searchResults/searchResults",
     "pages/choice/choice",
     "pages/collection/collection",
     "pages/classify/classify",
@@ -21,7 +22,8 @@
     "wux-step": "../../dist/step/index",
     "wux-tabs": "../../dist/tabs/index",
     "wux-tab": "../../dist/tab/index",
-    "wux-tag": "../../dist/tag/index"
+    "wux-tag": "../../dist/tag/index",
+    "wux-icon": "../../dist/icon/index"
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -44,12 +46,6 @@
         "selectedIconPath": "pages/src/selectSort.png",
         "pagePath": "pages/classify/classify",
         "text": "分类"
-      },
-      {
-        "iconPath": "pages/src/chef-default.png",
-        "selectedIconPath": "pages/src/chef-pressed.png",
-        "pagePath": "pages/logs/logs",
-        "text": "精选菜谱"
       },
       {
         "iconPath": "pages/src/collection-default.png",
