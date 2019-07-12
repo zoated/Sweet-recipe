@@ -192,7 +192,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app)
+    debugger
+      wx.setNavigationBarTitle({
+        title: app.globalData.clickFood.title
+      })
     app.globalData.clickFood.burden = (app.globalData.clickFood.ingredients + ";" + app.globalData.clickFood.burden).split(";").filter(i => i != "").map(i => i && i.split(","))
     this.setData({clickData: app.globalData.clickFood})
   },

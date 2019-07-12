@@ -16,6 +16,9 @@ Page({
     })
   },
   onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: '我的'
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
