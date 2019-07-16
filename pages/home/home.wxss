@@ -97,7 +97,12 @@
   height: 80px;
   padding: 0px 10px;
 }
-
+.main-material{
+  display: flex;
+}
+.assist-material{
+  display: flex;
+}
 .top-img {
   width: 22%;
   height: 100%;

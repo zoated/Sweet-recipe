@@ -1,35 +1,35 @@
 <!--pages/foodInfo/foodInfo.wxml-->
 <view>
-  <image src="{{clickData.albums[0]}}" class="food-img"></image>
+  <image src="{{clickData.pic}}" class="food-img"></image>
   <view class="food-info">
-    <view class="food-title">{{clickData.title}}</view>
-    <view class="food-tags">{{clickData.tags}}</view>
-    <view class="food-imtro">{{clickData.imtro}}</view>
+    <view class="food-title">{{clickData.name}}</view>
+    <view class="food-tags">{{clickData.tag}}</view>
+    <view class="food-imtro">{{clickData.content}}</view>
     <view>
       <view class="food-buren">用料</view>
-      <wux-cell-group wx:for="{{clickData.burden}}">
-        <wux-cell title="{{item[0]}}" extra="{{item[1]}}"></wux-cell>
+      <wux-cell-group wx:for="{{clickData.material}}">
+        <wux-cell title="{{item.mname}}" extra="{{item.amount}}"></wux-cell>
       </wux-cell-group>
     </view>
     <view>
       <view class="practice-text">做法</view>
-      <view wx:for="{{clickData.steps}}" class="practice-info">
-        <image src="{{item.img}}" class="practice-img"></image>
-        <view>{{item.step}}</view>
+      <view wx:for="{{clickData.process}}" class="practice-info">
+        <image src="{{item.pic}}" class="practice-img"></image>
+        <view>{{item.pcontent}}</view>
       </view>
     </view>
   </view>
   <view class="food-footer">
     <view class="like-title">
       <view class="like-left">猜你喜欢</view>
-      <view class="like-right">查看全部</view>
+      <view class="like-right" bindtap="onClickAll">查看全部</view>
     </view>
-    <view wx:for="{{likeData}}" class="like-conter">
-      <image src="{{item.albums[0]}}" class="like-img"></image>
+    <view wx:for="{{likeData}}" wx:key="{{index}}" class="like-conter" data-gid='{{index}}' bindtap="onClickLike">
+      <image src="{{item.pic}}" class="like-img"></image>
       <view class="like-info">
-        <view class="like-name">{{item.title}}</view>
-        <view class="like-burden">{{item.ingredients}};{{item.burden}}</view>
-        <view class="like-imtro">{{item.imtro}}</view>
+        <view class="like-name">{{item.name}}</view>
+        <view class="like-burden">{{item.tag}}</view>
+        <view class="like-imtro">{{item.content}}</view>
       </view>
     </view>
     <view class="keep-white"></view>

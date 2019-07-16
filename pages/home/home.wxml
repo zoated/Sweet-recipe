@@ -18,14 +18,14 @@
     </block>
   </swiper>
   <view class="chosen-type">
-    <view class="left">
+    <view class="left" bindtap="onClickMeals">
       <view class="left-text">
-        <view class="left-text1">日常三餐</view>
-        <view class="left-text2">每日三餐推荐</view>
+        <view class="left-text1">午餐晚餐</view>
+        <view class="left-text2">经典正餐推荐</view>
       </view>
       <image src="../src/chef-icon.png" class="left-icon" />
     </view>
-    <view class="right">
+    <view class="right" bindtap="onClickBest">
       <view class="right-text">
         <view class="right-text1">精选菜谱</view>
         <view class="right-text2">热门菜系推荐</view>
@@ -38,10 +38,10 @@
     <view class="top-right" bindtap="onChickAll">查看全部</view>
   </view>
   <view class="top">
-    <image src="../src/homely.jpg" class="top-img" />
-    <image src="../src/western-food.jpg" class="top-img" />
-    <image src="../src/snack.jpg" class="top-img" />
-    <image src="../src/baking.jpg" class="top-img" />
+    <image src="../src/homely.jpg" class="top-img" data-gid='家常菜' bindtap="onClickImg" />
+    <image src="../src/western-food.jpg" class="top-img" data-gid='西餐' bindtap="onClickImg" />
+    <image src="../src/snack.jpg" class="top-img" data-gid='小吃' bindtap="onClickImg" />
+    <image src="../src/baking.jpg" class="top-img" data-gid='烘焙' bindtap="onClickImg" />
   </view>
   <view class="want-eat">
     <wux-select id="wux-select1" />
@@ -49,18 +49,18 @@
   </view>
   <view wx:for="{{topList}}" wx:key="{{index}}" class="top-conten" bindtap="onBoxClick" data-clickindex="{{index}}">
     <wux-wing-blank size="default">
-      <wux-card extra="{{item.title}}" thumb="{{item.albums[0]}}" thumbStyle="width:60px;height:60px">
+      <wux-card extra="{{item.name}}" thumb="{{item.pic}}" thumbStyle="width:60px;height:60px">
         <view slot="body" class="tags">
-          <view wx:for="{{item.tags}}" wx:for-item="itemName" class="tag" hover-class="none">
+          <view wx:for="{{item.tag}}" wx:for-item="itemName" class="tag" hover-class="none">
             <wux-tag>{{itemName}}</wux-tag>
           </view>
         </view>
         <view slot="footer">
-          <view>
-            主料：{{item.ingredients}}
+          <view class="main-material">
+            主料：<view wx:for="{{item.material}}" wx:key="{{index}}" wx:for-item="mName" wx:name>{{mName.type == 0 ?'': mName.mname}} </view>
           </view>
-          <view>
-            辅料：{{item.burden}}
+          <view class="assist-material">
+            辅料：<view wx:for="{{item.material}}" wx:key="{{index}}" wx:for-item="mName" wx:name>{{mName.type == 1 ?'': mName.mname}}</view>
           </view>
         </view>
       </wux-card>

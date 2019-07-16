@@ -55,5 +55,6 @@ App({
     userInfo: null,
     clickFood: [],
     searchResults: [],
+    searchData: [],
   }
 })
